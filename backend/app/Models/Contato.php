@@ -12,5 +12,28 @@
       $stmt->execute();
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function create($data) {
+      $sql = "INSERT INTO contatos (nome_completo, data_nascimento, email, telefone, celular, profissao, tem_whatsapp, notificacoes_email, notificacoes_sms) 
+              VALUES (:nome_completo, :data_nascimento, :email, :telefone, :celular, :profissao, :tem_whatsapp, :notificacoes_email, :notificacoes_sms)";
+      
+      $stmt = $this->pdo->prepare($sql);
+      
+      $stmt->bindParam(':nome_completo', $data['nome_completo']);
+      $stmt->bindParam(':data_nascimento', $data['data_nascimento']);
+      $stmt->bindParam(':email', $data['email']);
+      $stmt->bindParam(':telefone', $data['telefone']);
+      $stmt->bindParam(':celular', $data['celular']);
+      $stmt->bindParam(':profissao', $data['profissao']);
+      $stmt->bindParam(':tem_whatsapp', $data['tem_whatsapp']);
+      $stmt->bindParam(':notificacoes_email', $data['notificacoes_email']);
+      $stmt->bindParam(':notificacoes_sms', $data['notificacoes_sms']);
+    
+      if ($stmt->execute()) {
+        return $this->pdo->lastInsertId();
+      }
+
+      return false;
+    }
   }
 ?>

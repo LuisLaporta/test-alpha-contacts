@@ -7,6 +7,8 @@
 
   if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $contatoController->getAll();
+  } else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $contatoController->create();
   } else {
     http_response_code(405);
     echo json_encode(['error' => 'Método não permitido']);
