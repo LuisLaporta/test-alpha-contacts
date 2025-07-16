@@ -65,5 +65,14 @@
       
       return $stmt->execute();
     }
+
+    public function delete($id) {
+      $sql = "DELETE FROM contatos WHERE id = :id";
+
+      $stmt = $this->pdo->prepare($sql);
+      $stmt->bindParam(':id', $id);
+
+      return $stmt->execute();
+    }
   }
 ?>

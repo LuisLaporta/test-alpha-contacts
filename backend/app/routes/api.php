@@ -17,6 +17,13 @@
       http_response_code(400);
       echo json_encode(['error' => 'Id inválido']);
     }
+  } else if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
+    if ($id > 0) {
+      $contatoController->delete($id);
+    } else {
+      http_response_code(400);
+      echo json_encode(['error' => 'Id inválido']);
+    }
   } else {
     http_response_code(405);
     echo json_encode(['error' => 'Método não permitido']);
