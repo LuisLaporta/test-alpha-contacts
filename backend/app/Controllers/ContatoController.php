@@ -5,9 +5,8 @@
   class ContatoController {
     private $contato;
 
-    public function __construct() {
-      $database = new Database();
-      $this->contato = new Contato($database->db);
+    public function __construct($db) {
+      $this->contato = new Contato($db);
     }
 
     public function getAll() {
