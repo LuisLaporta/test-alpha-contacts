@@ -7,8 +7,8 @@
     exit();
   }
 
-  require_once '../config/database.php';
-  require_once '../Models/Contato.php';
+  require_once __DIR__ . '/../config/database.php';
+  require_once __DIR__ . '/../Controllers/ContatoController.php';
 
   $database = new Database();
   $contatoController = new ContatoController($database->db);
@@ -26,6 +26,7 @@
       echo json_encode(['error' => 'Id inválido']);
     }
   } else if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
+    $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
     if ($id > 0) {
       $contatoController->delete($id);
     } else {
