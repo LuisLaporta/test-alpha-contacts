@@ -1,0 +1,36 @@
+<div class="form-container">
+  <form [formGroup]="form">
+    <div>
+      <label *ngFor="let info of infosTypes">
+        {{ info.label }}
+          <input
+            [type]="info.type"
+            class="input"
+            [id]="info.formControlName"
+            [formControlName]="info.formControlName"
+            [placeholder]="info.placeholder || ''"
+            [required]="!!info.required"
+            [mask]="getMask(info.formControlName || '')"
+          />
+        <div class="input-error" *ngIf="form.get(info.formControlName)?.invalid && form.get(info.formControlName)?.touched">
+          <ng-container *ngFor="let error of (info.errorMessages | keyvalue)">
+            <span *ngIf="form.get(info.formControlName)?.errors?.[error.key]">{{ error.value }}</span>
+          </ng-container>
+        </div>
+      </label>
+    </div>
+    <div>
+      <app-radio-option
+        *ngFor="let radio of radios"
+        [id]="radio.id"
+        [name]="radio.id"
+        [label]="radio.label"
+        [checked]="radio.checked"
+      >
+      </app-radio-option>
+    </div>
+    <div>
+      <app-button></app-button>
+    </div>
+  </form>
+</div>
