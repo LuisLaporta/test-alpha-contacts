@@ -1,6 +1,6 @@
 <?php
-  require_once '../config/database.php';
-  require_once '../Models/Contato.php';
+  require_once __DIR__ . '/../config/database.php';
+  require_once __DIR__ . '/../Models/Contato.php';
 
   class ContatoController {
     private $contato;
@@ -44,12 +44,12 @@
 
     public function delete($id) {
       $success = $this->contato->delete($id);
+      header('Content-Type: application/json');
 
       if ($success) {
         http_response_code(200);
-        echo json_encode(['message' => 'Contato deletado']);
       } else {
-        http_response_code(response_code: 404);
+        http_response_code(404);
         echo json_encode(['error' => 'Erro ao deletar contato']);
       }
     }
