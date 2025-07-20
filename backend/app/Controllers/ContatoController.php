@@ -44,10 +44,10 @@
 
     public function delete($id) {
       $success = $this->contato->delete($id);
+      header('Content-Type: application/json');
 
       if ($success) {
         http_response_code(200);
-        echo json_encode(['message' => 'Contato deletado']);
       } else {
         http_response_code(404);
         echo json_encode(['error' => 'Erro ao deletar contato']);
