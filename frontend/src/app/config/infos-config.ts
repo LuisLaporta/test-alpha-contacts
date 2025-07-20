@@ -1,7 +1,8 @@
 import { Validators } from '@angular/forms';
-import { InfoFieldConfig, InfosConfig } from '../models/infos-config.interface';
+import { InfosConfig } from '../models/infos-config.interface';
 import { celularValidator } from '../validators/celular.validator';
 import { telefoneValidator } from '../validators/telefone.validator';
+import { nascimentoValidator } from '../validators/nascimento.validator';
 
 export const infosConfig: InfosConfig = {
   fields: [
@@ -23,9 +24,10 @@ export const infosConfig: InfosConfig = {
       required: true,
       placeholder: 'EX.: 02/03/2002',
       errorMessages: {
-        required: 'Data de nascimento é obrigatória'
+        required: 'Data de nascimento é obrigatória',
+        futureDate: 'Data de nascimento inválida'
       },
-      validators: [Validators.required]
+      validators: [Validators.required, nascimentoValidator()]
     },
     {
       label: 'E-mail',
@@ -73,6 +75,6 @@ export const infosConfig: InfosConfig = {
         celularInvalido: 'Celular em formato inválido'
       },
       validators: [Validators.required, celularValidator()]
-    }
+    },
   ]
 };
