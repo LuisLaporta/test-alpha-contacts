@@ -1,1 +1,5 @@
-<app-form></app-form>
+<app-header></app-header>
+<app-form (submitEvent)="onFormSubmit($event)" [contact]="currentContact" [isEditing]="isEditing"></app-form>
+<hr>
+<app-contacts-table [contacts]="contacts" (delete)="deleteContact($event)" (edit)="onEditContact($event)"></app-contacts-table>
+<app-footer></app-footer>
