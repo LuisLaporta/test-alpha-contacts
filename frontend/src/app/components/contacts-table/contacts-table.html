@@ -17,8 +17,8 @@
                     <td class="table-data">{{contato.email}}</td>
                     <td class="table-data">{{formatPhoneNumber(contato.celular)}}</td>
                     <td class="table-data">
-                        <button class="table-button edit-btn" (click)="onEdit(contato)">Editar</button>
-                        <button class="table-button delete-btn" (click)="onDelete(contato.id)">Excluir</button>
+                        <button class="table-button edit-btn" (click)="onEdit(contato)"><img src="editar.png"/></button>
+                        <button class="table-button delete-btn" (click)="onDelete(contato.id)"><img src="excluir.png"/></button>
                     </td>
                 </tr>
             </ng-container>
