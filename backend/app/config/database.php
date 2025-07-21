@@ -2,7 +2,7 @@
   class Database {
     private $host = 'localhost';
     private $username = 'root';
-    private $pass = '';
+    private $pass = 'Dudi1221';
     private $dbName = 'contatos_db';
     public $db;
 
