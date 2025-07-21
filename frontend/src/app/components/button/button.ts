@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './button.css'
 })
 export class Button {
-
+  @Input() isEditing: boolean = false;
+  @Input() disabled: boolean = false;
 }
