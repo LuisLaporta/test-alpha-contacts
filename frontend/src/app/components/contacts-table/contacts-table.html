@@ -1,0 +1,27 @@
+<div class="table-container">
+    <table class="data-table">
+        <thead>
+            <tr class="table-header">
+                <th class="table-column">Nome</th>
+                <th class="table-column">Data de nascimento</th>
+                <th class="table-column">E-mail</th>
+                <th class="table-column">Celular para contato</th>
+                <th class="table-column">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngIf="contacts.length > 0">
+                <tr class="table-row" *ngFor="let contato of contacts">
+                    <td class="table-data">{{contato.nome_completo}}</td>
+                    <td class="table-data">{{contato.data_nascimento | date: 'dd/MM/yyyy' }}</td>
+                    <td class="table-data">{{contato.email}}</td>
+                    <td class="table-data">{{formatPhoneNumber(contato.celular)}}</td>
+                    <td class="table-data">
+                        <button class="table-button edit-btn" (click)="onEdit(contato)"><img src="editar.png"/></button>
+                        <button class="table-button delete-btn" (click)="onDelete(contato.id)"><img src="excluir.png"/></button>
+                    </td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>
