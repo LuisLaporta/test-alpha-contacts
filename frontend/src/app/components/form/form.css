@@ -1,0 +1,141 @@
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: var(--text-font);
+}
+
+.form-header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_label {
+  color: var(--terciary-color);
+}
+
+.form_input {
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid var(--terciary-color);
+  outline: none;
+  color: var(--terciary-color);
+}
+
+.form_input:focus {
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.form_label:has(+ .form_input:focus) {
+  color: var(--primary-color);
+}
+
+.input-error {
+  color: var(--error-color);
+  position: absolute;
+  margin-top: 7vh;
+}
+
+.form_radios_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form_radios label {
+  color: var(--terciary-color);
+  font-family: var(--text-font);
+  font-size: 1rem;
+}
+
+.form_button_container {
+  width: 15%;
+  margin-left: 35%;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .form-header_container {
+    margin: 7vh 0 0 7vw;
+  }
+
+  .form_content {
+    width: 50%;
+    margin-bottom: 7vw;
+  }
+
+  .form_label {
+    font-size: 1.2rem;
+  }
+
+  .form_input {
+    width: 90%;
+    padding: 1vh 0;
+    font-size: 0.9rem;
+  }
+
+  .input-error {
+    font-size: 0.9rem;
+  }
+
+  .form_radios_container {
+    margin: 1vh 0 0 7vw;
+    width: 93%;
+  }
+
+  .form_radios {
+    width: 50%;
+    margin-bottom: 4vw;
+  }
+
+  .form_button_container {
+    margin-left: 75%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .form-header_container {
+    margin-top: 10vh;
+    width: 80%;
+  }
+
+  .form_content {
+    width: 40%;
+    margin-bottom: 5vw;
+  }
+
+  .form_label {
+    font-size: 1.5rem;
+  }
+
+  .form_input {
+    width: 90%;
+    padding: 1vh 0;
+    font-size: 1rem;
+  }
+
+  .input-error {
+    font-size: 1rem;
+    margin-top: 7.5vh;
+  }
+
+  .form_radios_container {
+    width: 80%;
+  }
+
+  .form_radios {
+    width: 40%;
+    margin-bottom: 4vw;
+  }
+
+  .form_button_container {
+    margin-left: 60%;
+  }
+}

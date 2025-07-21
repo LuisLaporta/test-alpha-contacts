@@ -1,0 +1,51 @@
+header {
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+
+
+.span-img {
+  background-image: url( '../../../../public/alpha-icon.jpg' );
+  background-size: cover;
+  margin-left: 1.5vw;
+}
+
+.title-header {
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-family: var(--text-font);
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  header {
+    padding: 15px 20px;
+    height: 10vh;
+  }
+
+  .span-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .title-header {
+    font-size: 1.5rem;
+    margin-left: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  header {
+    height: 15vh;
+  }
+
+  .span-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .title-header {
+    font-size: 2rem;
+    margin-left: 25px;
+  }
+}

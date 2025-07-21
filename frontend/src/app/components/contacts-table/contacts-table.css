@@ -11,18 +11,18 @@
     background-color: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-
 }
 
 .table-header {
-    background-color: #f8f9fa;
+    background-color: var(--primary-color);
 }
 
 .table-column {
     padding: 1rem;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
-    color: #333;
+    font-family: var(--text-font);
+    color: var(--secondary-color);
     border-bottom: 2px solid #dee2e6;
 }
 
@@ -38,6 +38,7 @@
     padding: 1rem;
     color: #555;
     vertical-align: middle;
+    text-align: center;
 }
 
 .table-button {
@@ -52,9 +53,9 @@
 }
 
 .edit-btn {
-    /* background-image: url("../../../public/editar.png"); */
+    /* background-image: url("../../../../public/editar.png");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; */
     background-color: transparent;
     width: 2rem;
     height: 2rem;
@@ -62,9 +63,9 @@
 }
 
 .delete-btn {
-    /* background-image: url("../../../public/excluir.png"); */
+    /* background-image: url("../../../../public/excluir.png");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; */
     background-color: transparent;
     width: 2rem;
     height: 2rem;
